@@ -15,7 +15,7 @@ $(document).ready(function() {
   })
 
 function inviaContenuto(value) {
-  for (i=1; i<=value.length; i++) {
+  for (i=0; i<=value.length; i++) {
 
   var list = {
     "num": value[i].id,
