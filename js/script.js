@@ -50,3 +50,37 @@ $(".todo").on("click", ".delete", function() {
 })
 
 })
+
+$(".addElement").click(function() {
+
+  $.ajax({
+  url: "http://157.230.17.132:3017/todos/"+id,
+  method: "POST",
+  success: function (data) {
+    //console.log(data);
+    var valore = data;
+    aggiungiConteuto(valore);
+  },
+  error: function (richiesta, stato, errori) {
+    alert("Errore");
+  }
+})
+})
+
+function aggiungiConteuto(value) {
+var nuovoId = $(".todo").lastChild().text();
+console.log(nuovoId);
+var testo = $(".textElement").val();
+
+var list = {
+  "num": 1,
+  "testo": testo,
+}
+
+var source = $("#entry-template").html();
+var template = Handlebars.compile(source);
+
+var contenuto = template(list);
+
+$(".todo").append(contenuto);
+}

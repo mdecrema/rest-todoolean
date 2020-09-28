@@ -7,10 +7,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
   </head>
   <body>
+    <!-- Lista -->
     <ul class="todo">
 
     </ul>
+    <!-- Campo input per aggiungere un elemento -->
+    <input id="textElement" type="text" />
+    <button id="addElement">Aggiungi</button>
 
+    <!-- Template rigo lista -->
     <script id="entry-template" type="text/x-handlebars-template">
 
       <li id="{{num}}">
