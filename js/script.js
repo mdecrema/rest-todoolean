@@ -53,8 +53,6 @@ $(".todo").on("click", ".delete", function() {
 
 $("#addElement").click(function() {
   var testo = $("#textElement").val();
-  var id = $(".todo").lastChild();
-  console.log(id);
 
   $.ajax({
   url: "http://157.230.17.132:3017/todos/",
