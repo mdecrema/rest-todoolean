@@ -6,16 +6,20 @@ $(document).ready(function() {
     method: "GET",
     success: function (data) {
       console.log(data);
-      //inviaContenuto(data)
+      var valore = data;
+      inviaContenuto(valore);
     },
     error: function (richiesta, stato, errori) {
       alert("Errore");
     }
   })
 
+function inviaContenuto(value) {
+  for (i=1; i<=value.length; i++) {
+
   var list = {
-    "num": "id",
-    "testo": "text",
+    "num": value[i].id,
+    "testo": value[i].text,
     "numero": "",
   }
 
@@ -25,8 +29,8 @@ $(document).ready(function() {
   var contenuto = template(list);
 
   $(".todo").append(contenuto);
+}
 
-
-
+}
 
 })
